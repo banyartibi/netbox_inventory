@@ -1,0 +1,13 @@
+---
+plugin: netbox.netbox.nb_inventory    # <-- Teljes plugin név!
+api_endpoint: "{{ lookup('env', 'NETBOX_URL') }}"
+token: "{{ lookup('env', 'NETBOX_TOKEN') }}"
+validate_certs: false
+config_context: false
+group_by:
+  - device_roles
+  - sites
+query_filters:
+  - status: active
+device_query_filters:
+  - has_primary_ip: 'true'
