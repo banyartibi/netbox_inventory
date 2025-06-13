@@ -1,7 +1,9 @@
 ---
 plugin: netbox.netbox.nb_inventory
-api_endpoint: "http://netbox-dev.apps-crc.testing"    # <-- Direkt URL
-token: "bd90ab7d33f6565896c9f9b1efb86129ab918644"                      # <-- Direkt token
+#api_endpoint: "{{ lookup('env', 'NETBOX_URL') }}"
+#token: "{{ lookup('env', 'NETBOX_TOKEN') }}"
+api_endpoint: "http://netbox-dev.apps-crc.testing"
+token: "bd90ab7d33f6565896c9f9b1efb86129ab918644"
 validate_certs: false
 config_context: false
 group_by:
@@ -9,5 +11,6 @@ group_by:
   - sites
 query_filters:
   - status: active
-device_query_filters:
-  - has_primary_ip: 'true'
+#device_query_filters:
+#  - has_primary_ip: 'true'
+
